@@ -6,355 +6,347 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>カレンダー</title>
     <link rel="stylesheet" href="./style.css">
-    <link rel="stylesheet" href="./calendar.css">
-    <link rel="stylesheet" href="./calendar-theme.css">
 </head>
 
 <body>
 
-    <h1>カレンダーのテスト</h1>
+    <h1>スクリーンリーダーと目で見るユーザに対応したカレンダー実装例</h1>
 
     <div class="wrapper">
 
 
-        <div class="cal">
 
 
-            <h2 class="cal-headding">2024年1月</h2>
-            <nav class="cal-relative-nav">
+
+            <h2 class="headding">2024年1月</h2>
+            <nav class="relative-nav">
                 <ul>
                     <li><a href="#">前の月</a></li>
                     <li><a href="#">次の月</a></li>
                 </ul>
             </nav>
-            <nav class="cal-body">
 
 
+            <!-- 目で見るユーザ用の追従要素-->
+            <nav class="cal">
                 <!-- 追従用 -->
-                <div class="cal-body__sticky-event" date-sticky-start="cal-20240101" date-sticky-end="cal-20240110"
+                <div class="cal__multi-day-sticky js-setPosition" data-sticky-start="cal-20240101" data-sticky-end="cal-20240102"
                     aria-hidden="true">
-                    <p>会期の長い展覧会: タイトルタイトルタイトルタイトルタイトルタイトル</p>
+                    <p class="multi-day-item">会期の長い展覧会: タイトルタイトルタイトルタイトルタイトルタイトル</p>
                 </div>
 
-                <div class="cal-body__sticky-event" date-sticky-start="cal-20240112" date-sticky-end="cal-20240120"
+                <div class="cal__multi-day-sticky js-setPosition" data-sticky-start="cal-20240104" data-sticky-end="cal-20240106"
                     aria-hidden="true">
-                    <p>会期の長い展覧会: タイトルタイトルタイトルタイトルタイトルタイトル</p>
+                    <p class="multi-day-item">会期の長い展覧会: タイトルタイトルタイトルタイトルタイトルタイトル</p>
+                </div>
+
+                <div class="cal__multi-day-sticky js-setPosition" data-sticky-start="cal-20240108" data-sticky-end="cal-20240110"
+                    aria-hidden="true">
+                    <p class="multi-day-item">会期の長い展覧会: タイトルタイトルタイトルタイトルタイトルタイトル</p>
                 </div>
 
                 <!-- リスト表示用 -->
-                <div class="cal-item">
-                    <h3 class="cal-item__day">1月1日(月)</h3>
-                    <div class="cal-item__isopen">
+                <div id="cal-20240101" class="cal-item">
+                    <h3 class="cal-item__date">X月X日(X曜日)</h3>
+                    <div class="cal-item__is-open">
                         <p>開館時間: 9:00–20:00</p>
                     </div>
-                    <div class="cal-item__single">
+                    <div class="cal-item__one-day">
                         <ul>
                             <li>11:00 単独のイベント</li>
-                            <li>10:00–12:00 長いタイトルの単独のイベント</li>
-                            <li>14:00–18:00 長い長いタイトルの単独のイベント</li>
-                            <li>16:00–18:00 長い長い長いタイトルの単独のイベント</li>
+                            <li>10:00–12:00 単独のイベント2</li>
+                            <li>14:00–18:00 単独のイベント3</li>
+                            <li>16:00–18:00 単独のイベント4</li>
                         </ul>
                     </div>
-                    <div class="cal-item__range sr-hidden">
-                        <p>会期の長い展覧会: タイトルタイトルタイトルタイトルタイトルタイトル</p>
-                    </div>
-                </div>
-                <div class="cal-item">
-                    <h3 class="cal-item__day">1月1日(月)</h3>
-                    <div class="cal-item__isopen">
-                        <p>開館時間: 9:00–20:00</p>
-                    </div>
-                    <div class="cal-item__single">
-                        <ul>
-                            <li>11:00 単独のイベント</li>
-                            <li>10:00–12:00 長いタイトルの単独のイベント</li>
-                            <li>14:00–18:00 長い長いタイトルの単独のイベント</li>
-                            <li>16:00–18:00 長い長い長いタイトルの単独のイベント</li>
-                        </ul>
-                    </div>
-                    <div class="cal-item__range sr-hidden">
-                        <p>会期の長い展覧会: タイトルタイトルタイトルタイトルタイトルタイトル</p>
-                    </div>
-                </div>
-                <div class="cal-item">
-                    <h3 class="cal-item__day">1月1日(月)</h3>
-                    <div class="cal-item__isopen">
-                        <p>開館時間: 9:00–20:00</p>
-                    </div>
-                    <div class="cal-item__single">
-                        <ul>
-                            <li>11:00 単独のイベント</li>
-                            <li>10:00–12:00 長いタイトルの単独のイベント</li>
-                            <li>14:00–18:00 長い長いタイトルの単独のイベント</li>
-                            <li>16:00–18:00 長い長い長いタイトルの単独のイベント</li>
-                        </ul>
-                    </div>
-                    <div class="cal-item__range sr-hidden">
-                        <p>会期の長い展覧会: タイトルタイトルタイトルタイトルタイトルタイトル</p>
-                    </div>
-                </div>
-                <div class="cal-item">
-                    <h3 class="cal-item__day">1月1日(月)</h3>
-                    <div class="cal-item__isopen">
-                        <p>開館時間: 9:00–20:00</p>
-                    </div>
-                    <div class="cal-item__single">
-                        <ul>
-                            <li>11:00 単独のイベント</li>
-                            <li>10:00–12:00 長いタイトルの単独のイベント</li>
-                            <li>14:00–18:00 長い長いタイトルの単独のイベント</li>
-                            <li>16:00–18:00 長い長い長いタイトルの単独のイベント</li>
-                        </ul>
-                    </div>
-                    <div class="cal-item__range sr-hidden">
-                        <p>会期の長い展覧会: タイトルタイトルタイトルタイトルタイトルタイトル</p>
-                    </div>
-                </div>
-                <div class="cal-item">
-                    <h3 class="cal-item__day">1月1日(月)</h3>
-                    <div class="cal-item__isopen">
-                        <p>開館時間: 9:00–20:00</p>
-                    </div>
-                    <div class="cal-item__single">
-                        <ul>
-                            <li>11:00 単独のイベント</li>
-                            <li>10:00–12:00 長いタイトルの単独のイベント</li>
-                            <li>14:00–18:00 長い長いタイトルの単独のイベント</li>
-                            <li>16:00–18:00 長い長い長いタイトルの単独のイベント</li>
-                        </ul>
-                    </div>
-                    <div class="cal-item__range sr-hidden">
-                        <p>会期の長い展覧会: タイトルタイトルタイトルタイトルタイトルタイトル</p>
-                    </div>
-                </div>
-                <div class="cal-item">
-                    <h3 class="cal-item__day">1月1日(月)</h3>
-                    <div class="cal-item__isopen">
-                        <p>開館時間: 9:00–20:00</p>
-                    </div>
-                    <div class="cal-item__single">
-                        <ul>
-                            <li>11:00 単独のイベント</li>
-                            <li>10:00–12:00 長いタイトルの単独のイベント</li>
-                            <li>14:00–18:00 長い長いタイトルの単独のイベント</li>
-                            <li>16:00–18:00 長い長い長いタイトルの単独のイベント</li>
-                        </ul>
-                    </div>
-                    <div class="cal-item__range sr-hidden">
-                        <p>会期の長い展覧会: タイトルタイトルタイトルタイトルタイトルタイトル</p>
-                    </div>
-                </div>
-                <div class="cal-item">
-                    <h3 class="cal-item__day">1月1日(月)</h3>
-                    <div class="cal-item__isopen">
-                        <p>開館時間: 9:00–20:00</p>
-                    </div>
-                    <div class="cal-item__single">
-                        <ul>
-                            <li>11:00 単独のイベント</li>
-                            <li>10:00–12:00 長いタイトルの単独のイベント</li>
-                            <li>14:00–18:00 長い長いタイトルの単独のイベント</li>
-                            <li>16:00–18:00 長い長い長いタイトルの単独のイベント</li>
-                        </ul>
-                    </div>
-                    <div class="cal-item__range sr-hidden">
-                        <p>会期の長い展覧会: タイトルタイトルタイトルタイトルタイトルタイトル</p>
-                    </div>
-                </div>
-                <div class="cal-item">
-                    <h3 class="cal-item__day">1月1日(月)</h3>
-                    <div class="cal-item__isopen">
-                        <p>開館時間: 9:00–20:00</p>
-                    </div>
-                    <div class="cal-item__single">
-                        <ul>
-                            <li>11:00 単独のイベント</li>
-                            <li>10:00–12:00 長いタイトルの単独のイベント</li>
-                            <li>14:00–18:00 長い長いタイトルの単独のイベント</li>
-                            <li>16:00–18:00 長い長い長いタイトルの単独のイベント</li>
-                        </ul>
-                    </div>
-                    <div class="cal-item__range sr-hidden">
-                        <p>会期の長い展覧会: タイトルタイトルタイトルタイトルタイトルタイトル</p>
-                    </div>
-                </div>
-                <div class="cal-item">
-                    <h3 class="cal-item__day">1月1日(月)</h3>
-                    <div class="cal-item__isopen">
-                        <p>開館時間: 9:00–20:00</p>
-                    </div>
-                    <div class="cal-item__single">
-                        <ul>
-                            <li>11:00 単独のイベント</li>
-                            <li>10:00–12:00 長いタイトルの単独のイベント</li>
-                            <li>14:00–18:00 長い長いタイトルの単独のイベント</li>
-                            <li>16:00–18:00 長い長い長いタイトルの単独のイベント</li>
-                        </ul>
-                    </div>
-                    <div class="cal-item__range sr-hidden">
-                        <p>会期の長い展覧会: タイトルタイトルタイトルタイトルタイトルタイトル</p>
-                    </div>
-                </div>
-                <div class="cal-item">
-                    <h3 class="cal-item__day">1月1日(月)</h3>
-                    <div class="cal-item__isopen">
-                        <p>開館時間: 9:00–20:00</p>
-                    </div>
-                    <div class="cal-item__single">
-                        <ul>
-                            <li>11:00 単独のイベント</li>
-                            <li>10:00–12:00 長いタイトルの単独のイベント</li>
-                            <li>14:00–18:00 長い長いタイトルの単独のイベント</li>
-                            <li>16:00–18:00 長い長い長いタイトルの単独のイベント</li>
-                        </ul>
-                    </div>
-                    <div class="cal-item__range sr-hidden">
-                        <p>会期の長い展覧会: タイトルタイトルタイトルタイトルタイトルタイトル</p>
-                    </div>
-                </div>
-                <div class="cal-item">
-                    <h3 class="cal-item__day">1月1日(月)</h3>
-                    <div class="cal-item__isopen">
-                        <p>開館時間: 9:00–20:00</p>
-                    </div>
-                    <div class="cal-item__single">
-                        <ul>
-                            <li>11:00 単独のイベント</li>
-                            <li>10:00–12:00 長いタイトルの単独のイベント</li>
-                            <li>14:00–18:00 長い長いタイトルの単独のイベント</li>
-                            <li>16:00–18:00 長い長い長いタイトルの単独のイベント</li>
-                        </ul>
-                    </div>
-                    <div class="cal-item__range sr-hidden">
-                        <p>会期の長い展覧会: タイトルタイトルタイトルタイトルタイトルタイトル</p>
-                    </div>
-                </div>
-                <div class="cal-item">
-                    <h3 class="cal-item__day">1月1日(月)</h3>
-                    <div class="cal-item__isopen">
-                        <p>開館時間: 9:00–20:00</p>
-                    </div>
-                    <div class="cal-item__single">
-                        <ul>
-                            <li>11:00 単独のイベント</li>
-                            <li>10:00–12:00 長いタイトルの単独のイベント</li>
-                            <li>14:00–18:00 長い長いタイトルの単独のイベント</li>
-                            <li>16:00–18:00 長い長い長いタイトルの単独のイベント</li>
-                        </ul>
-                    </div>
-                    <div class="cal-item__range sr-hidden">
-                        <p>会期の長い展覧会: タイトルタイトルタイトルタイトルタイトルタイトル</p>
-                    </div>
-                </div>
-                <div class="cal-item">
-                    <h3 class="cal-item__day">1月1日(月)</h3>
-                    <div class="cal-item__isopen">
-                        <p>開館時間: 9:00–20:00</p>
-                    </div>
-                    <div class="cal-item__single">
-                        <ul>
-                            <li>11:00 単独のイベント</li>
-                            <li>10:00–12:00 長いタイトルの単独のイベント</li>
-                            <li>14:00–18:00 長い長いタイトルの単独のイベント</li>
-                            <li>16:00–18:00 長い長い長いタイトルの単独のイベント</li>
-                        </ul>
-                    </div>
-                    <div class="cal-item__range sr-hidden">
-                        <p>会期の長い展覧会: タイトルタイトルタイトルタイトルタイトルタイトル</p>
-                    </div>
-                </div>
-                <div class="cal-item">
-                    <h3 class="cal-item__day">1月1日(月)</h3>
-                    <div class="cal-item__isopen">
-                        <p>開館時間: 9:00–20:00</p>
-                    </div>
-                    <div class="cal-item__single">
-                        <ul>
-                            <li>11:00 単独のイベント</li>
-                            <li>10:00–12:00 長いタイトルの単独のイベント</li>
-                            <li>14:00–18:00 長い長いタイトルの単独のイベント</li>
-                            <li>16:00–18:00 長い長い長いタイトルの単独のイベント</li>
-                        </ul>
-                    </div>
-                    <div class="cal-item__range sr-hidden">
-                        <p>会期の長い展覧会: タイトルタイトルタイトルタイトルタイトルタイトル</p>
-                    </div>
-                </div>
-                <div class="cal-item">
-                    <h3 class="cal-item__day">1月1日(月)</h3>
-                    <div class="cal-item__isopen">
-                        <p>開館時間: 9:00–20:00</p>
-                    </div>
-                    <div class="cal-item__single">
-                        <ul>
-                            <li>11:00 単独のイベント</li>
-                            <li>10:00–12:00 長いタイトルの単独のイベント</li>
-                            <li>14:00–18:00 長い長いタイトルの単独のイベント</li>
-                            <li>16:00–18:00 長い長い長いタイトルの単独のイベント</li>
-                        </ul>
-                    </div>
-                    <div class="cal-item__range sr-hidden">
-                        <p>会期の長い展覧会: タイトルタイトルタイトルタイトルタイトルタイトル</p>
-                    </div>
-                </div>
-                <div class="cal-item">
-                    <h3 class="cal-item__day">1月1日(月)</h3>
-                    <div class="cal-item__isopen">
-                        <p>開館時間: 9:00–20:00</p>
-                    </div>
-                    <div class="cal-item__single">
-                        <ul>
-                            <li>11:00 単独のイベント</li>
-                            <li>10:00–12:00 長いタイトルの単独のイベント</li>
-                            <li>14:00–18:00 長い長いタイトルの単独のイベント</li>
-                            <li>16:00–18:00 長い長い長いタイトルの単独のイベント</li>
-                        </ul>
-                    </div>
-                    <div class="cal-item__range sr-hidden">
-                        <p>会期の長い展覧会: タイトルタイトルタイトルタイトルタイトルタイトル</p>
-                    </div>
-                </div>
-                <div class="cal-item">
-                    <h3 class="cal-item__day">1月1日(月)</h3>
-                    <div class="cal-item__isopen">
-                        <p>開館時間: 9:00–20:00</p>
-                    </div>
-                    <div class="cal-item__single">
-                        <ul>
-                            <li>11:00 単独のイベント</li>
-                            <li>10:00–12:00 長いタイトルの単独のイベント</li>
-                            <li>14:00–18:00 長い長いタイトルの単独のイベント</li>
-                            <li>16:00–18:00 長い長い長いタイトルの単独のイベント</li>
-                        </ul>
-                    </div>
-                    <div class="cal-item__range sr-hidden">
-                        <p>会期の長い展覧会: タイトルタイトルタイトルタイトルタイトルタイトル</p>
-                    </div>
-                </div>
-                <div class="cal-item">
-                    <h3 class="cal-item__day">1月1日(月)</h3>
-                    <div class="cal-item__isopen">
-                        <p>開館時間: 9:00–20:00</p>
-                    </div>
-                    <div class="cal-item__single">
-                        <ul>
-                            <li>11:00 単独のイベント</li>
-                            <li>10:00–12:00 長いタイトルの単独のイベント</li>
-                            <li>14:00–18:00 長い長いタイトルの単独のイベント</li>
-                            <li>16:00–18:00 長い長い長いタイトルの単独のイベント</li>
-                        </ul>
-                    </div>
-                    <div class="cal-item__range sr-hidden">
+                    <div class="cal-item__multi-day-for-screen-reader">
                         <p>会期の長い展覧会: タイトルタイトルタイトルタイトルタイトルタイトル</p>
                     </div>
                 </div>
 
+                <!-- リスト表示用 -->
+                <div id="cal-20240102" class="cal-item">
+                    <h3 class="cal-item__date">X月X日(X曜日)</h3>
+                    <div class="cal-item__is-open">
+                        <p>開館時間: 9:00–20:00</p>
+                    </div>
+                    <div class="cal-item__one-day">
+                        <ul>
+                            <li>11:00 単独のイベント</li>
+                            <li>10:00–12:00 単独のイベント2</li>
+                            <li>14:00–18:00 単独のイベント3</li>
+                            <li>16:00–18:00 単独のイベント4</li>
+                        </ul>
+                    </div>
+                    <div class="cal-item__multi-day-for-screen-reader">
+                        <p>会期の長い展覧会: タイトルタイトルタイトルタイトルタイトルタイトル</p>
+                    </div>
+                </div>
+
+                <!-- リスト表示用 -->
+                <div id="cal-20240103" class="cal-item">
+                    <h3 class="cal-item__date">X月X日(X曜日)</h3>
+                    <div class="cal-item__is-open">
+                        <p>開館時間: 9:00–20:00</p>
+                    </div>
+                    <div class="cal-item__one-day">
+                        <ul>
+                            <li>11:00 単独のイベント</li>
+                            <li>10:00–12:00 単独のイベント2</li>
+                            <li>14:00–18:00 単独のイベント3</li>
+                            <li>16:00–18:00 単独のイベント4</li>
+                        </ul>
+                    </div>
+                    <div class="cal-item__multi-day-for-screen-reader">
+                        <p>会期の長い展覧会: タイトルタイトルタイトルタイトルタイトルタイトル</p>
+                    </div>
+                </div>
+
+                <!-- リスト表示用 -->
+                <div id="cal-20240104" class="cal-item">
+                    <h3 class="cal-item__date">X月X日(X曜日)</h3>
+                    <div class="cal-item__is-open">
+                        <p>開館時間: 9:00–20:00</p>
+                    </div>
+                    <div class="cal-item__one-day">
+                        <ul>
+                            <li>11:00 単独のイベント</li>
+                            <li>10:00–12:00 単独のイベント2</li>
+                            <li>14:00–18:00 単独のイベント3</li>
+                            <li>16:00–18:00 単独のイベント4</li>
+                        </ul>
+                    </div>
+                    <div class="cal-item__multi-day-for-screen-reader">
+                        <p>会期の長い展覧会: タイトルタイトルタイトルタイトルタイトルタイトル</p>
+                    </div>
+                </div>
+
+                <!-- リスト表示用 -->
+                <div id="cal-20240105" class="cal-item">
+                    <h3 class="cal-item__date">X月X日(X曜日)</h3>
+                    <div class="cal-item__is-open">
+                        <p>開館時間: 9:00–20:00</p>
+                    </div>
+                    <div class="cal-item__one-day">
+                        <ul>
+                            <li>11:00 単独のイベント</li>
+                            <li>10:00–12:00 単独のイベント2</li>
+                            <li>14:00–18:00 単独のイベント3</li>
+                            <li>16:00–18:00 単独のイベント4</li>
+                        </ul>
+                    </div>
+                    <div class="cal-item__multi-day-for-screen-reader">
+                        <p>会期の長い展覧会: タイトルタイトルタイトルタイトルタイトルタイトル</p>
+                    </div>
+                </div>
+
+                <!-- リスト表示用 -->
+                <div id="cal-20240106" class="cal-item">
+                    <h3 class="cal-item__date">X月X日(X曜日)</h3>
+                    <div class="cal-item__is-open">
+                        <p>開館時間: 9:00–20:00</p>
+                    </div>
+                    <div class="cal-item__one-day">
+                        <ul>
+                            <li>11:00 単独のイベント</li>
+                            <li>10:00–12:00 単独のイベント2</li>
+                            <li>14:00–18:00 単独のイベント3</li>
+                            <li>16:00–18:00 単独のイベント4</li>
+                        </ul>
+                    </div>
+                    <div class="cal-item__multi-day-for-screen-reader">
+                        <p>会期の長い展覧会: タイトルタイトルタイトルタイトルタイトルタイトル</p>
+                    </div>
+                </div>
+
+                <!-- リスト表示用 -->
+                <div id="cal-20240107" class="cal-item">
+                    <h3 class="cal-item__date">X月X日(X曜日)</h3>
+                    <div class="cal-item__is-open">
+                        <p>開館時間: 9:00–20:00</p>
+                    </div>
+                    <div class="cal-item__one-day">
+                        <ul>
+                            <li>11:00 単独のイベント</li>
+                            <li>10:00–12:00 単独のイベント2</li>
+                            <li>14:00–18:00 単独のイベント3</li>
+                            <li>16:00–18:00 単独のイベント4</li>
+                        </ul>
+                    </div>
+                    <div class="cal-item__multi-day-for-screen-reader">
+                        <p>会期の長い展覧会: タイトルタイトルタイトルタイトルタイトルタイトル</p>
+                    </div>
+                </div>
+
+                <!-- リスト表示用 -->
+                <div id="cal-20240108" class="cal-item">
+                    <h3 class="cal-item__date">X月X日(X曜日)</h3>
+                    <div class="cal-item__is-open">
+                        <p>開館時間: 9:00–20:00</p>
+                    </div>
+                    <div class="cal-item__one-day">
+                        <ul>
+                            <li>11:00 単独のイベント</li>
+                            <li>10:00–12:00 単独のイベント2</li>
+                            <li>14:00–18:00 単独のイベント3</li>
+                            <li>16:00–18:00 単独のイベント4</li>
+                        </ul>
+                    </div>
+                    <div class="cal-item__multi-day-for-screen-reader">
+                        <p>会期の長い展覧会: タイトルタイトルタイトルタイトルタイトルタイトル</p>
+                    </div>
+                </div>
+
+                <!-- リスト表示用 -->
+                <div id="cal-20240109" class="cal-item">
+                    <h3 class="cal-item__date">X月X日(X曜日)</h3>
+                    <div class="cal-item__is-open">
+                        <p>開館時間: 9:00–20:00</p>
+                    </div>
+                    <div class="cal-item__one-day">
+                        <ul>
+                            <li>11:00 単独のイベント</li>
+                            <li>10:00–12:00 単独のイベント2</li>
+                            <li>14:00–18:00 単独のイベント3</li>
+                            <li>16:00–18:00 単独のイベント4</li>
+                        </ul>
+                    </div>
+                    <div class="cal-item__multi-day-for-screen-reader">
+                        <p>会期の長い展覧会: タイトルタイトルタイトルタイトルタイトルタイトル</p>
+                    </div>
+                </div>
+
+                <!-- リスト表示用 -->
+                <div id="cal-20240110" class="cal-item">
+                    <h3 class="cal-item__date">X月X日(X曜日)</h3>
+                    <div class="cal-item__is-open">
+                        <p>開館時間: 9:00–20:00</p>
+                    </div>
+                    <div class="cal-item__one-day">
+                        <ul>
+                            <li>11:00 単独のイベント</li>
+                            <li>10:00–12:00 単独のイベント2</li>
+                            <li>14:00–18:00 単独のイベント3</li>
+                            <li>16:00–18:00 単独のイベント4</li>
+                        </ul>
+                    </div>
+                    <div class="cal-item__multi-day-for-screen-reader">
+                        <p>会期の長い展覧会: タイトルタイトルタイトルタイトルタイトルタイトル</p>
+                    </div>
+                </div>
+                
+                <!-- リスト表示用 -->
+                <div id="cal-20240111" class="cal-item">
+                    <h3 class="cal-item__date">X月X日(X曜日)</h3>
+                    <div class="cal-item__is-open">
+                        <p>開館時間: 9:00–20:00</p>
+                    </div>
+                    <div class="cal-item__one-day">
+                        <ul>
+                            <li>11:00 単独のイベント</li>
+                            <li>10:00–12:00 単独のイベント2</li>
+                            <li>14:00–18:00 単独のイベント3</li>
+                            <li>16:00–18:00 単独のイベント4</li>
+                        </ul>
+                    </div>
+                    <div class="cal-item__multi-day-for-screen-reader">
+                        <p>会期の長い展覧会: タイトルタイトルタイトルタイトルタイトルタイトル</p>
+                    </div>
+                </div>
+
+                <!-- リスト表示用 -->
+                <div id="cal-20240112" class="cal-item">
+                    <h3 class="cal-item__date">X月X日(X曜日)</h3>
+                    <div class="cal-item__is-open">
+                        <p>開館時間: 9:00–20:00</p>
+                    </div>
+                    <div class="cal-item__one-day">
+                        <ul>
+                            <li>11:00 単独のイベント</li>
+                            <li>10:00–12:00 単独のイベント2</li>
+                            <li>14:00–18:00 単独のイベント3</li>
+                            <li>16:00–18:00 単独のイベント4</li>
+                        </ul>
+                    </div>
+                    <div class="cal-item__multi-day-for-screen-reader">
+                        <p>会期の長い展覧会: タイトルタイトルタイトルタイトルタイトルタイトル</p>
+                    </div>
+                </div>
+
+                <!-- リスト表示用 -->
+                <div id="cal-20240113" class="cal-item">
+                    <h3 class="cal-item__date">X月X日(X曜日)</h3>
+                    <div class="cal-item__is-open">
+                        <p>開館時間: 9:00–20:00</p>
+                    </div>
+                    <div class="cal-item__one-day">
+                        <ul>
+                            <li>11:00 単独のイベント</li>
+                            <li>10:00–12:00 単独のイベント2</li>
+                            <li>14:00–18:00 単独のイベント3</li>
+                            <li>16:00–18:00 単独のイベント4</li>
+                        </ul>
+                    </div>
+                    <div class="cal-item__multi-day-for-screen-reader">
+                        <p>会期の長い展覧会: タイトルタイトルタイトルタイトルタイトルタイトル</p>
+                    </div>
+                </div>
+
+                <!-- リスト表示用 -->
+                <div id="cal-20240114" class="cal-item">
+                    <h3 class="cal-item__date">X月X日(X曜日)</h3>
+                    <div class="cal-item__is-open">
+                        <p>開館時間: 9:00–20:00</p>
+                    </div>
+                    <div class="cal-item__one-day">
+                        <ul>
+                            <li>11:00 単独のイベント</li>
+                            <li>10:00–12:00 単独のイベント2</li>
+                            <li>14:00–18:00 単独のイベント3</li>
+                            <li>16:00–18:00 単独のイベント4</li>
+                        </ul>
+                    </div>
+                    <div class="cal-item__multi-day-for-screen-reader">
+                        <p>会期の長い展覧会: タイトルタイトルタイトルタイトルタイトルタイトル</p>
+                    </div>
+                </div>
 
             </nav>
 
-        </div>
-
     </div>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // 'js-setPosition' クラスを持つすべての要素を選択
+        var elements = document.querySelectorAll('.js-setPosition');
+
+        elements.forEach(function (element) {
+            // 要素のデータ属性から開始と終了の ID を取得
+            var startId = element.getAttribute('data-sticky-start');
+            var endId = element.getAttribute('data-sticky-end');
+
+            // 開始と終了の ID に対応する要素を見つける
+            var startElement = document.getElementById(startId);
+            var endElement = document.getElementById(endId);
+
+            if (startElement && endElement) {
+                // 開始要素の上部の位置を取得
+                var startTop = startElement.offsetTop;
+
+                // 終了要素の下部の位置を取得
+                // 下部の位置は、offsetTop と offsetHeight を加算して算出
+                var endBottom = endElement.offsetTop + endElement.offsetHeight;
+
+                // 現在の要素の top 位置を設定
+                element.style.top = startTop + 'px';
+
+                // 要素の高さを設定
+                // 高さは終了要素の下部と開始要素の上部の差で算出
+                element.style.height = (endBottom - startTop) + 'px';
+            }
+        });
+    });
+    </script>
 </body>
 
 </html>

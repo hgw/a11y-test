@@ -1,6 +1,22 @@
+@layer base, components, theme;
 
+@import "components.css";
+@import "theme.css";
 
-.wrapper {
-    width:1024px;
-    margin:0 auto;
+@layer base {
+    body {
+        font-size: 16px;
+    }
+
+    .wrapper {
+        width: 1024px;
+        margin: 0 auto;
+    }
+
+    h1 {
+        text-align: center;
+    }
+    p {
+        margin: 0;
+    }
 }
